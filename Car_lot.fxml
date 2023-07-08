@@ -1,0 +1,62 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.carlot.CarLotController">
+    <center>
+        <TableView fx:id="carTableView">
+            <columns>
+                <TableColumn text="Car ID" prefWidth="100">
+                    <!-- Column value factories -->
+                </TableColumn>
+                <TableColumn text="Model Year" prefWidth="100">
+                    <!-- Column value factories -->
+                </TableColumn>
+                <TableColumn text="Make" prefWidth="150">
+                    <!-- Column value factories -->
+                </TableColumn>
+                <TableColumn text="Model" prefWidth="150">
+                    <!-- Column value factories -->
+                </TableColumn>
+                <TableColumn text="Price" prefWidth="100">
+                    <!-- Column value factories -->
+                </TableColumn>
+                <TableColumn text="Date Sold" prefWidth="150">
+                    <!-- Column value factories -->
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Select Year:" />
+            <ComboBox fx:id="yearComboBox" onAction="#yearComboBoxSelected" />
+
+            <Label text="Total Cars Sold: " />
+            <Label fx:id="totalCarsSoldLabel" />
+
+            <Label text="Total Price: " />
+            <Label fx:id="totalPriceLabel" />
+        </HBox>
+    </bottom>
+
+    <right>
+        <BarChart fx:id="barChart">
+            <xAxis>
+                <CategoryAxis label="Manufacturer" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Number of Cars Sold" />
+            </yAxis>
+        </BarChart>
+    </right>
+</BorderPane>
